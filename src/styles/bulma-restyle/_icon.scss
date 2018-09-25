@@ -1,0 +1,36 @@
+.icon {
+  /* Make icon size depend on font size */
+  width: 1.5em;
+  height: 1.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  img {
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    object-fit: scale-down;
+    object-position: center;
+  }
+}
+.icon--single {
+  border: 1px solid $color-border;
+  background: rgba(black, 0.33);
+  border-radius: $border-radius;
+  padding: 0.25rem;
+  box-sizing: content-box;
+  color: $color-brand;
+}
+
+.icon--medium {
+  width: 2.25em;
+  height: 2.25em;
+}
+
+/*If you want icon to be bigger than text around it */
+.icon--big {
+  width: 3em;
+  height: 3em;
+}

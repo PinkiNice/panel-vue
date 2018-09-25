@@ -1,0 +1,79 @@
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-alignCenter {
+  align-items: center;
+}
+.flex-selfCenter {
+  align-self: center;
+}
+.flex-selfEnd {
+  align-self: flex-end;
+}
+.flex-selfStart {
+  align-self: flex-start;
+}
+.flex-justifyEnd {
+  justify-content: flex-end;
+}
+.flex-justify {
+  justify-content: space-between;
+}
+.flex-justifyCenter {
+  justify-content: center;
+}
+.flex-centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-basis-0 {
+  flex-basis: 0;
+}
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-stretch {
+  align-items: stretch;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-rowReverse {
+  flex-direction: row-reverse;
+}
+.flex-columnReverse {
+  flex-direction: column-reverse;
+}
+.flex-column-tablet {
+  @include mq($from: tablet) {
+    flex-direction: column;
+  }
+}
+.flex-column-mobileOnly {
+  @include mq($until: tablet) {
+    flex-direction: column;
+  }
+}
+.flex-row-tablet {
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
+}
+.flex-row-tablet {
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
+}

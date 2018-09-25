@@ -1,0 +1,40 @@
+.border-childs {
+  & > * {
+    border-bottom: 1px solid $color-border;
+  }
+}
+.border-clearLast {
+  & > *:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
+.border-none {
+  border: none !important;
+}
+
+.border-round {
+  border-radius: 99999px;
+}
+
+.border-circle {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.border-all {
+  border-style: solid;
+}
+
+.border-top {
+  border-top-style: solid;
+}
+
+.border {
+  border-width: 1px;
+  border-color: $color-border;
+}
+
+.border-bottom {
+  border-bottom-style: solid;
+}

@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease, filter,
+    0.2s ease;
+  color: $color-deepSapphire;
+  background: transparent;
+
+  @include border-grayCollapsed;
+
+  .card-content {
+    flex-grow: 1;
+  }
+}
+
+.card--padded {
+  padding: 1rem;
+
+  &:hover {
+    background-color: $light;
+  }
+
+  @include mq($until: tablet) {
+    .card-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.card--quote {
+  position: relative;
+
+  .card-content {
+    background-image: url('/img/icon/quote.svg');
+    background-repeat: no-repeat;
+    background-position: 1rem 3rem;
+    background-size: 5rem;
+  }
+}
+
+.card--horizontal {
+  .card-image {
+    flex-grow: 1;
+  }
+
+  @include mq($until: tablet) {
+    .card-image {
+      display: none;
+    }
+  }
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+    .card-content {
+      flex-basis: 0;
+    }
+  }
+}
+
+.card--active {
+  box-shadow: 0px 0px 4rem 1rem rgba($color-spindle, 0.5);
+
+  .card-footer {
+    background: $white;
+  }
+}
+
+.card--inactive {
+  color: $color-gray;
+  background-color: transparent;
+  filter: grayscale(80%);
+}

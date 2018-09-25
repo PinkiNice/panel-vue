@@ -1,0 +1,52 @@
+
+@function gradient-blue($rot, $opacity: 1) {
+  @return linear-gradient($rot, rgba($color-blue, $opacity) 0%, rgba($color-violet, $opacity) 100%);
+}
+
+@function gradient-neon($rot, $opacity: 1) {
+  @return linear-gradient($rot, rgba($color-neon, $opacity) 0%, rgba($color-violet-neon, $opacity) 100%);
+}
+
+@function scrim-gradient($color, $stop, $start-opacity: 1) {
+  @return linear-gradient(
+    $color $start-opacity,
+    rgba($color, 0.978 * $start-opacity) 9.5%,
+    rgba($color, 0.925 * $start-opacity) 17.7%,
+    rgba($color, 0.857 * $start-opacity) 24.7%,
+    rgba($color, 0.781 * $start-opacity) 31%,
+    rgba($color, 0.701 * $start-opacity) 36.8%,
+    rgba($color, 0.62 * $start-opacity) 42.3%,
+    rgba($color, 0.538 * $start-opacity) 47.6%,
+    rgba($color, 0.455 * $start-opacity) 52.9%,
+    rgba($color, 0.373 * $start-opacity) 58.2%,
+    rgba($color, 0.291 * $start-opacity) 63.7%,
+    rgba($color, 0.212 * $start-opacity) 69.5%,
+    rgba($color, 0.138 * $start-opacity) 75.8%,
+    rgba($color, 0.07 * $start-opacity) 82.9%,
+    rgba($color, 0.019 * $start-opacity) 91.2%,
+    rgba($color, 0 * $start-opacity) 100%
+  )
+}
+
+@function scrim-radial-gradient($color, $stop, $start-opacity: 1) {
+  $square-fitter-multiplier: 0.73;
+
+  @return radial-gradient(
+    rgba($color, $start-opacity) 0%,
+    rgba($color, 0.978 * $start-opacity) 9.5% * $square-fitter-multiplier,
+    rgba($color, 0.925 * $start-opacity) 17.7% * $square-fitter-multiplier,
+    rgba($color, 0.857 * $start-opacity) 24.7% * $square-fitter-multiplier,
+    rgba($color, 0.781 * $start-opacity) 31% * $square-fitter-multiplier,
+    rgba($color, 0.701 * $start-opacity) 36.8% * $square-fitter-multiplier,
+    rgba($color, 0.62 * $start-opacity) 42.3% * $square-fitter-multiplier,
+    rgba($color, 0.538 * $start-opacity) 47.6% * $square-fitter-multiplier,
+    rgba($color, 0.455 * $start-opacity) 52.9% * $square-fitter-multiplier,
+    rgba($color, 0.373 * $start-opacity) 58.2% * $square-fitter-multiplier,
+    rgba($color, 0.291 * $start-opacity) 63.7% * $square-fitter-multiplier,
+    rgba($color, 0.212 * $start-opacity) 69.5% * $square-fitter-multiplier,
+    rgba($color, 0.138 * $start-opacity) 75.8% * $square-fitter-multiplier,
+    rgba($color, 0.07 * $start-opacity) 82.9% * $square-fitter-multiplier,
+    rgba($color, 0.019 * $start-opacity) 91.2% * $square-fitter-multiplier,
+    rgba($color, 0) * $start-opacity 100% * $square-fitter-multiplier
+  )
+}

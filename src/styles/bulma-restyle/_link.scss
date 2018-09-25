@@ -1,0 +1,10 @@
+/*
+  White-colored links used on deepSapphire background is invisible on hover
+  
+*/
+a {
+  &.u-color--white:hover {
+    color: $white;
+    text-decoration: underline;
+  }
+}

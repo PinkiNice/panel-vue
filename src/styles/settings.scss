@@ -1,0 +1,6 @@
+/* this file is transferred to every vue component */
+/* so they can access global SCSS vars */
+@import 'utils/all';
+
+@import 'bulma-variables';
+

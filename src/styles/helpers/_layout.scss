@@ -1,0 +1,40 @@
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none--tablet {
+}
+
+.d-inlineBlock {
+  display: inline-block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none--mobileOnly {
+  @include mq($until: tablet) {
+    display: none;
+  }
+}
+
+.d-block--mobileOnly {
+  @include mq($until: tablet) {
+    display: block;
+  }
+}
+
+.d-inlineBlock--mobileOnly {
+  @include mq($until: tablet) {
+    display: inline-block;
+  }
+}
+
+.u-fullwidth {
+  width: 100%;
+}

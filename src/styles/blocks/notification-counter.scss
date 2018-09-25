@@ -1,0 +1,15 @@
+.notificationCounter {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+
+  min-width: 1.75em;
+  min-height: 1.75em;
+  line-height: 1;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+
+  background-color: $color-red;
+}

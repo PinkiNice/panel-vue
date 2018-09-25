@@ -1,0 +1,177 @@
+// spacing
+// Small
+
+/*
+.margin{Side}-{size}-{media}
+.padding{Side}-{size}-{media}
+
+.marginTop-2-tablet
+*/
+$padding0: 0.25rem;
+$padding1: 0.5rem;
+$padding2: 1rem;
+$padding3: 1.5rem;
+$padding4: 2.5rem;
+$padding5: 5rem;
+
+$margin0: 0.25rem;
+$margin1: 0.75rem;
+$margin2: 1rem;
+$margin3: 2rem;
+$margin4: 3rem;
+$margin5: 4rem;
+$margin6: 5rem;
+
+$paddingSizes: (
+  0: $padding0,
+  1: $padding1,
+  2: $padding2,
+  3: $padding3,
+  4: $padding4,
+  5: $padding5,
+);
+
+$marginSizes: (
+  auto: auto,
+  0: $margin0,
+  1: $margin1,
+  2: $margin2,
+  3: $margin3,
+  4: $margin4,
+  5: $margin5,
+  6: $margin6,
+);
+
+$breakpoints: tablet, desktop, widescreen;
+
+@mixin generateSelectors(
+  $property,
+  $sizeMap,
+  $breakpoint: false,
+  $until: false,
+  $mediaSuffix: false
+) {
+  /* generate responsive classes */
+  @if $breakpoint {
+    /* if media query should be until */
+    @if $until {
+      @include mq($until: $breakpoint) {
+        @each $suffix, $value in $sizeMap {
+          .#{$property}Y-#{$suffix}-#{$mediaSuffix} {
+            #{$property}-top: $value;
+            #{$property}-bottom: $value;
+          }
+          .#{$property}Top-#{$suffix}-#{$mediaSuffix} {
+            #{$property}-top: $value;
+          }
+          .#{$property}Bottom-#{$suffix}-#{$mediaSuffix} {
+            #{$property}-bottom: $value;
+          }
+
+          .#{$property}X-#{$suffix}-#{$mediaSuffix} {
+            #{$property}-left: $value;
+            #{$property}-right: $value;
+          }
+          .#{$property}Left-#{$suffix}-#{$mediaSuffix} {
+            #{$property}-left: $value;
+          }
+          .#{$property}Right-#{$suffix}-#{$mediaSuffix} {
+            #{$property}-right: $value;
+          }
+
+          .#{$property}-#{$suffix}-#{$mediaSuffix} {
+            #{$property}: $value;
+          }
+        }
+      }
+    } @else {
+      @include mq($from: $breakpoint) {
+        @each $suffix, $value in $sizeMap {
+          .#{$property}Y-#{$suffix}-#{$breakpoint} {
+            #{$property}-top: $value;
+            #{$property}-bottom: $value;
+          }
+          .#{$property}Top-#{$suffix}-#{$breakpoint} {
+            #{$property}-top: $value;
+          }
+          .#{$property}Bottom-#{$suffix}-#{$breakpoint} {
+            #{$property}-bottom: $value;
+          }
+
+          .#{$property}X-#{$suffix}-#{$breakpoint} {
+            #{$property}-left: $value;
+            #{$property}-right: $value;
+          }
+          .#{$property}Left-#{$suffix}-#{$breakpoint} {
+            #{$property}-left: $value;
+          }
+          .#{$property}Right-#{$suffix}-#{$breakpoint} {
+            #{$property}-right: $value;
+          }
+
+          .#{$property}-#{$suffix}-#{$breakpoint} {
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+  } @else {
+    /* generate non responsive classes */
+
+    @each $suffix, $value in $sizeMap {
+      .#{$property}Y-#{$suffix} {
+        #{$property}-top: $value;
+        #{$property}-bottom: $value;
+      }
+      .#{$property}Top-#{$suffix} {
+        #{$property}-top: $value;
+      }
+      .#{$property}Bottom-#{$suffix} {
+        #{$property}-bottom: $value;
+      }
+
+      .#{$property}X-#{$suffix} {
+        #{$property}-left: $value;
+        #{$property}-right: $value;
+      }
+      .#{$property}Left-#{$suffix} {
+        #{$property}-left: $value;
+      }
+      .#{$property}Right-#{$suffix} {
+        #{$property}-right: $value;
+      }
+
+      .#{$property}-#{$suffix} {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+@mixin generateAllSelectorsGroups($property, $sizeMap, $bpArray) {
+  /* non responsive */
+  @include generateSelectors($property, $sizeMap);
+
+  /* responsibe mobile only */
+  @include generateSelectors(
+    $property,
+    $sizeMap,
+    nth($breakpoints, 1),
+    true,
+    'mobileOnly'
+  );
+
+  /* everything else */
+  @for $index from 1 through length($breakpoints) {
+    $bp: nth($bpArray, $index);
+    @include generateSelectors($property, $sizeMap, $bp, false, $bp);
+  }
+}
+
+@include generateAllSelectorsGroups(padding, $paddingSizes, $breakpoints);
+@include generateAllSelectorsGroups(margin, $marginSizes, $breakpoints);
+
+.margin-clear {
+  margin: 0 !important;
+}
+

@@ -1,0 +1,39 @@
+.select {
+  select[disabled] {
+    border: 1px solid $color-border;
+    &:hover {
+      border: 1px solid $color-border;
+    }
+  }
+
+  &:after {
+    border: 0 !important;
+    content: url('/img/icon/dropdown-arrows.png') !important;
+    width: 1em !important;
+    height: 1em !important;
+    transform: translateY(-50%) !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.select--minimalistic {
+    background: transparent;
+    border-style: none;
+
+    select {
+      padding-left: 0;
+      padding-right: 1em;
+      background: transparent;
+      border-style: none;
+      color: inherit;
+    }
+
+    &:after {
+      width: 0.5em !important;
+      height: 0.5em !important;
+      right: 0.25em !important;
+    }
+  }
+}

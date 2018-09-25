@@ -1,0 +1,22 @@
+$card-padding: 1rem;
+
+.card {
+  padding: $card-padding 0;
+  border-radius: $border-radius;
+  background-color: $color-dark-alt;
+}
+
+.card-content {
+  padding-left: $card-padding;
+  padding-right: $card-padding;
+}
+
+.card--paddingNegate {
+}
+
+.card-header {
+  margin-top: -$card-padding;
+  padding-top: $card-padding;
+
+  border-bottom: 1px solid $color-border;
+}

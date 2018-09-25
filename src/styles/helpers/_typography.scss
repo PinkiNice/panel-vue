@@ -1,0 +1,56 @@
+.fs--12 {
+  font-size: 12 / 16 * 1rem !important;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+}
+
+.t-weight--regular {
+  font-weight: 400;
+}
+
+.t-weight--demi {
+  font-weight: 600;
+}
+
+.t-weight--bold {
+  font-weight: $bold;
+}
+
+.t-center {
+  text-align: center;
+}
+.t-left {
+  text-align: left;
+}
+.t-right {
+  text-align: right;
+}
+.t-center--desktop {
+  @include mq($from: desktop) {
+    text-align: center;
+  }
+}
+.t-nowrap {
+  white-space: nowrap;
+}
+
+.t-left--desktop {
+  @include mq($from: desktop) {
+    text-align: left;
+  }
+}
+
+.t-lineHeight-1 {
+  line-height: 1;
+}
+
+.t-nowrap {
+  white-space: nowrap;
+}
+
+.t-truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

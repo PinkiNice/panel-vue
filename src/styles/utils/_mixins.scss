@@ -1,0 +1,49 @@
+@import 'gradients';
+
+//Size at which all fluid parameteres reach its mininmum
+$screen-fluid-min: rem(450px);
+$screen-fluid-max: rem(1344px + (2 * 64px));
+
+@mixin fluid($value, $min, $max) {
+  @include fluid-type($value, $screen-fluid-min, $screen-fluid-max, $min, $max);
+}
+
+@mixin fluid-font-size($min, $max) {
+  @include fluid-type(
+    font-size,
+    $screen-fluid-min,
+    $screen-fluid-max,
+    $min,
+    $max
+  );
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin border-grayCollapsed {
+  $border-color: lighten($color-gray, 20);
+  box-shadow: 1px 0 0 0 $border-color, 0 1px 0 0 $border-color,
+    1px 1px 0 0 $border-color,
+    /* Just to fix the corner */ 1px 0 0 0 $border-color inset,
+    0 1px 0 0 $border-color inset;
+}

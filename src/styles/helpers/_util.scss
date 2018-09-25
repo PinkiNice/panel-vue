@@ -1,0 +1,38 @@
+.u-overflow {
+  overflow: hidden;
+}
+
+.u-overflow--yScroll {
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+
+.u-overflow--x {
+  overflow-x: hidden;
+}
+//forms
+.u-input--noresize {
+  resize: none;
+}
+
+// look and feel
+
+%u-lf--input {
+  padding-left: 1em;
+  padding-right: 1em;
+
+  padding-top: calc(0.375em - 1px);
+  padding-bottom: calc(0.375em - 1px);
+
+  min-height: 2.25em;
+
+  box-sizing: content-box;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  border-radius: $border-radius;
+}
+
+.u-lf--input {
+  @extend %u-lf--input;
+}

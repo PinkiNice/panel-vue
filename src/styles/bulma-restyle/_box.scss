@@ -1,0 +1,8 @@
+.box {
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+.box:not(:last-child) {
+  margin-bottom: initial;
+}

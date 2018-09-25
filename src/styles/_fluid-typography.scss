@@ -1,0 +1,52 @@
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$extra-bold: 800;
+
+// A magic number which gives 42px font size on desktop for h1
+$modular-scale-max: 1.2259;
+$modular-scale-min: 1.067;
+
+$max-header-number: 6;
+
+@mixin modular-scaled-heading($heading) {
+  .h#{$heading},
+  h#{$heading} {
+    @include fluid-type(
+      font-size,
+      37.5rem,
+      80rem,
+      1rem * pow($modular-scale-min, $max-header-number - $heading),
+      1rem * pow($modular-scale-max, $max-header-number - $heading)
+    );
+  }
+}
+
+@mixin generate-titles($heading) {
+  .is-size-#{$heading},
+  .title.is-#{$heading} {
+    @include fluid-font-size(
+      1rem * pow($modular-scale-min, $max-header-number - $heading),
+      1rem * pow($modular-scale-max, $max-header-number - $heading)
+    );
+  }
+}
+
+@for $i from 1 through 6 {
+  @include generate-titles($i);
+}
+
+.fs-17 {
+  font-size: 17 / 16 * 1rem;
+}
+
+.u-typography--sectionSpacing {
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+/* p, span, div, a, li {
+  letter-spacing: 0.05em;
+} */

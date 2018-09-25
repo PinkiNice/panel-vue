@@ -1,0 +1,35 @@
+.u-cursor--disabled {
+  cursor: not-allowed;
+}
+
+.ui-shadow--vague {
+  @include mq($from: tablet) {
+    box-shadow: 0 0 3rem 2rem rgba(142, 159, 177, 0.1);
+  }
+}
+
+.ui-fullheight--max {
+  max-height: 100vh;
+}
+
+.ui-fullheight--max-tablet {
+  @include mq($from: tablet) {
+    max-height: 100vh;
+  }
+}
+.ui-overlow--hidden {
+  overflow: hidden;
+}
+
+.ui-hoverable {
+  .ui-hoverable--visible {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &:hover {
+    .ui-hoverable--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

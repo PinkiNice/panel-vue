@@ -1,0 +1,24 @@
+@import './utils/vars';
+
+$container-width-tablet: 850px;
+$container-width-desktop: 1050px;
+$container-width-widescreen: 1152px;
+$container-width-fullhd: 1300px;
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 32px;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$landscape: 600px;
+//$tablet: 769px;
+$tablet: $container-width-tablet;
+// 960px container + 4rem
+$desktop: $container-width-desktop + (2 * $gap);
+
+/* 
+  Two breakpoints bellow is collapsed 
+  because we just dont have fullhd site version
+*/
+// 1152px container + 4rem
+$widescreen: $container-width-widescreen + (2 * $gap);
+// 1344px container + 4rem
+$fullhd: $container-width-fullhd + (2 * $gap) !default;

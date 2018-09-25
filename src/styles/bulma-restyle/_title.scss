@@ -1,0 +1,7 @@
+.title:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: -1em;
+}

@@ -1,0 +1,10 @@
+.container {
+  &.container--small {
+    max-width: 900px;
+  }
+
+  .container__footer {
+    background: $color-light;
+    padding: 0 3rem;
+  }
+}

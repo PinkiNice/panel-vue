@@ -1,0 +1,18 @@
+.tile {
+  /* This allows to set is-gapless modifier to tiles */
+  &.is-gapless {
+    &.is-ancestor,
+    &.is-ancestor:last-child {
+      margin: 0;
+    }
+
+    .tile.is-parent {
+      padding: 0;
+    }
+
+    .tile.is-vertical > .tile.is-child:not(:last-child) {
+      /* Important is required because bulma already has it :( */
+      margin-bottom: 0 !important;
+    }
+  }
+}
