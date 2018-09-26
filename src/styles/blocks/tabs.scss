@@ -1,0 +1,24 @@
+.tab {
+  margin: 0.5em;
+  color: $color-gray;
+  border-bottom: 3px solid transparent;
+  &:hover {
+    border-bottom-color: $color-red;
+  }
+}
+
+.tab--active {
+  color: white;
+}
+
+.tabs {
+  margin: 0 -0.5em;
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:hover) {
+    .tab--active {
+      border-bottom-color: $color-red;
+    }
+  }
+}

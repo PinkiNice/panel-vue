@@ -10,6 +10,7 @@
 @import 'bulma/sass/utilities/_all.sass';
 @import 'bulma/sass/base/_all.sass';
 @import 'bulma/sass/grid/columns.sass';
+@import 'reset';
 
 @import 'main';
 @import 'animations';
@@ -30,4 +31,7 @@
 @import 'helpers/z-index';
 
 @import 'blocks/card';
-@import 'blocks/notification-counter.scss';
+@import 'blocks/notification-counter';
+@import 'blocks/table';
+@import 'blocks/icon';
+@import 'blocks/tabs';
